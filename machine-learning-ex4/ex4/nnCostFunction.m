@@ -63,10 +63,10 @@ J = -1/m * J;
 J = J + lambda/(2*m) * (sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:,2:end).^2)));
 
 Theta1_grad(:,1) = 1/m * Theta1_grad(:,1);
-Theta1_grad(:,2:end) = 1/m * Theta1_grad(:,2:end) + lambda*Theta1(:,2:end);
+Theta1_grad(:,2:end) = 1/m * Theta1_grad(:,2:end) + lambda/m * Theta1(:,2:end);
 
 Theta2_grad(:,1) = 1/m * Theta2_grad(:,1);
-Theta2_grad(:,2:end) = 1/m * Theta2_grad(:,2:end) + lambda*Theta2(:,2:end);
+Theta2_grad(:,2:end) = 1/m * Theta2_grad(:,2:end) + lambda/m * Theta2(:,2:end);
 
 % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
